@@ -33,12 +33,12 @@ public class TelaCaixa extends JFrame {
     private ImageIcon imagem;
 
     public TelaCaixa() {
-
+        initComponents();
     }
 
     public TelaCaixa(String nome, String adm) {
         initComponents();
-        setLocationRelativeTo(null);
+        
 
         this.configurarTela();
 
@@ -54,6 +54,99 @@ public class TelaCaixa extends JFrame {
         } else {
             this.preparandoMenu(false);
             lblNomeUsuario.setForeground(Color.blue);
+        }
+
+    }
+
+    public void calcular() {
+        try {
+            double c200 = 0.0;
+            if (!n200.getText().isEmpty()) {
+                c200 = Double.parseDouble(n200.getText());
+                c200 *= 200;
+            }
+
+            double c100 = 0.0;
+            if (!n100.getText().isEmpty()) {
+                c100 = Double.parseDouble(n100.getText());
+                c100 *= 100;
+            }
+
+            double c50 = 0.0;
+            if (!n50.getText().isEmpty()) {
+                c50 = Double.parseDouble(n50.getText());
+                c50 *= 50;
+            }
+
+            double c20 = 0.0;
+            if (!n20.getText().isEmpty()) {
+                c20 = Double.parseDouble(n20.getText());
+                c20 *= 20;
+            }
+
+            double c10 = 0.0;
+            if (!n10.getText().isEmpty()) {
+                c10 = Double.parseDouble(n10.getText());
+                c10 *= 10;
+            }
+
+            double c5 = 0.0;
+            if (!n5.getText().isEmpty()) {
+                c5 = Double.parseDouble(n5.getText());
+                c5 *= 5;
+            }
+
+            double c2 = 0.0;
+            if (!n2.getText().isEmpty()) {
+                c2 = Double.parseDouble(n2.getText());
+                c2 *= 2;
+            }
+
+            double c1 = 0.0;
+            if (!n1.getText().isEmpty()) {
+                c1 = Double.parseDouble(n1.getText());
+                c1 *= 1;
+            }
+
+            double c050 = 0.0;
+            if (!n050.getText().isEmpty()) {
+                c050 = Double.parseDouble(n050.getText());
+                c050 *= 0.50;
+            }
+
+            double c025 = 0.0;
+            if (!n025.getText().isEmpty()) {
+                c025 = Double.parseDouble(n025.getText());
+                c025 *= 0.25;
+            }
+
+            double c010 = 0.0;
+            if (!n010.getText().isEmpty()) {
+                c010 = Double.parseDouble(n010.getText());
+                c010 *= 0.10;
+            }
+
+            double c005 = 0.0;
+            if (!n005.getText().isEmpty()) {
+                c005 = Double.parseDouble(n005.getText());
+                c005 *= 0.05;
+            }
+
+            double meio = 0.0;
+            if (!nMeio.getText().isEmpty()) {
+                meio = Double.parseDouble(nMeio.getText());
+            }
+
+            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
+
+            // Seu código para calcular os valores...
+            double total = c200 + c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
+            txtTotal.setText(decimalFormat.format(total));
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
+
         }
 
     }
@@ -310,125 +403,159 @@ public class TelaCaixa extends JFrame {
         jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        n200 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(450, 650));
+        setPreferredSize(new java.awt.Dimension(420, 590));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(400, 900));
+        jPanel1.setPreferredSize(new java.awt.Dimension(400, 580));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setText("Usuário: ");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 72, -1, -1));
 
         lblNomeUsuario.setText("##");
+        jPanel1.add(lblNomeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 72, 178, -1));
 
         lblHora.setText("/ /");
+        jPanel1.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 42, -1, -1));
 
         jLabel14.setText("Data:");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 42, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel15.setText("Coloque a qtd de celula ou moeda");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
 
         jLabel1.setText("Nota de R$ 100,00");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, -1));
 
         n100.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n100ActionPerformed(evt);
             }
         });
+        jPanel1.add(n100, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 45, -1));
 
         jLabel2.setText("Nota de R$ 50,00");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
         n50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n50ActionPerformed(evt);
             }
         });
+        jPanel1.add(n50, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 47, -1));
 
         jLabel3.setText("Nota de R$ 20,00");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 187, -1, -1));
 
         n20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n20ActionPerformed(evt);
             }
         });
+        jPanel1.add(n20, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 184, 47, -1));
 
         jLabel4.setText("Nota de R$ 10,00");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 217, -1, -1));
 
         n10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n10ActionPerformed(evt);
             }
         });
+        jPanel1.add(n10, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 214, 47, -1));
 
         jLabel5.setText("Nota de R$ 5,00");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 247, -1, -1));
 
         n5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n5ActionPerformed(evt);
             }
         });
+        jPanel1.add(n5, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 244, 47, -1));
 
         jLabel6.setText("Nota de R$ 2,00");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 277, -1, -1));
 
         n2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n2ActionPerformed(evt);
             }
         });
+        jPanel1.add(n2, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 274, 47, -1));
 
         jLabel7.setText("Total meio cx. ");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 307, -1, -1));
 
         nMeio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nMeioActionPerformed(evt);
             }
         });
+        jPanel1.add(nMeio, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 304, 47, -1));
 
         jLabel8.setText("Moeda R$ 1,00");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 337, -1, -1));
 
         n1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n1ActionPerformed(evt);
             }
         });
+        jPanel1.add(n1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 334, 47, -1));
 
         jLabel9.setText("Moeda R$ 0,50");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 367, -1, -1));
 
         n050.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n050ActionPerformed(evt);
             }
         });
+        jPanel1.add(n050, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 364, 47, -1));
 
         jLabel10.setText("Moeda R$ 0,25");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 394, -1, -1));
 
         n025.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n025ActionPerformed(evt);
             }
         });
+        jPanel1.add(n025, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 394, 46, -1));
 
         jLabel11.setText("Moeda R$ 0,10");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 427, -1, -1));
 
         n010.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n010ActionPerformed(evt);
             }
         });
+        jPanel1.add(n010, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 424, 46, -1));
 
         jLabel12.setText("Moeda R$ 0,05");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 457, -1, -1));
 
         n005.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 n005ActionPerformed(evt);
             }
         });
+        jPanel1.add(n005, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 454, 46, -1));
 
         jLabel13.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel13.setText("Total Caixa:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 484, -1, -1));
 
         txtTotal.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         txtTotal.setText("R$");
+        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 484, 132, -1));
 
         jButton2.setText("Limpar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -436,6 +563,7 @@ public class TelaCaixa extends JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 541, 84, -1));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -443,8 +571,10 @@ public class TelaCaixa extends JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 512, -1, -1));
 
         jButton4.setText("Finalizar");
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, -1, -1));
 
         jButton1.setText("Retirada");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -452,6 +582,7 @@ public class TelaCaixa extends JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 541, -1, -1));
 
         jButton3.setText("Entrada");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -459,360 +590,48 @@ public class TelaCaixa extends JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, 90, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(n20, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(n50, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel8))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(n1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nMeio, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(n2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                        .addComponent(n5, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                        .addComponent(n10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(n100, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblHora)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(btnCalcular)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(n050, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel10)
-                                        .addComponent(jLabel11)
-                                        .addComponent(jLabel12))
-                                    .addGap(28, 28, 28)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(n010, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                        .addComponent(n025, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                        .addComponent(n005, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jLabel15)))
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel15)
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(lblHora))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(lblNomeUsuario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(n100, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(n50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(n20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(n10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(n5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(n2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(nMeio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(n1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(n050, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(n025, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(n010, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(n005, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addGap(1, 1, 1)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(txtTotal))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCalcular))
-                .addContainerGap(65, Short.MAX_VALUE))
-        );
+        jLabel17.setText("Nota de R$ 200,00");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, -1));
+
+        n200.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                n200ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(n200, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 45, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(40, 40, 40)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 23, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(398, 680));
+        setSize(new java.awt.Dimension(472, 635));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void n50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n50ActionPerformed
         // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n20.requestFocus();
     }//GEN-LAST:event_n50ActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-        try {
 
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
-
+        calcular();
 
     }//GEN-LAST:event_btnCalcularActionPerformed
 
@@ -898,928 +717,72 @@ public class TelaCaixa extends JFrame {
 
     private void n20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n20ActionPerformed
         // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n10.requestFocus();
     }//GEN-LAST:event_n20ActionPerformed
 
     private void n10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n10ActionPerformed
         // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n5.requestFocus();
     }//GEN-LAST:event_n10ActionPerformed
 
     private void n5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n5ActionPerformed
         // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n2.requestFocus();
     }//GEN-LAST:event_n5ActionPerformed
 
     private void n2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n2ActionPerformed
         // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         nMeio.requestFocus();
     }//GEN-LAST:event_n2ActionPerformed
 
     private void nMeioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nMeioActionPerformed
         // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n1.requestFocus();
 
     }//GEN-LAST:event_nMeioActionPerformed
 
     private void n1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n1ActionPerformed
         // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n050.requestFocus();
 
     }//GEN-LAST:event_n1ActionPerformed
 
     private void n050ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n050ActionPerformed
-        // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n025.requestFocus();
     }//GEN-LAST:event_n050ActionPerformed
 
     private void n025ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n025ActionPerformed
-        // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n010.requestFocus();
     }//GEN-LAST:event_n025ActionPerformed
 
     private void n010ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n010ActionPerformed
-        // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         n005.requestFocus();
     }//GEN-LAST:event_n010ActionPerformed
 
     private void n005ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n005ActionPerformed
         // TODO add your handling code here:
-        try {
-
-            double c100 = 0.0;
-            if (!n100.getText().isEmpty()) {
-                c100 = Double.parseDouble(n100.getText());
-                c100 *= 100;
-            }
-
-            double c50 = 0.0;
-            if (!n50.getText().isEmpty()) {
-                c50 = Double.parseDouble(n50.getText());
-                c50 *= 50;
-            }
-
-            double c20 = 0.0;
-            if (!n20.getText().isEmpty()) {
-                c20 = Double.parseDouble(n20.getText());
-                c20 *= 20;
-            }
-
-            double c10 = 0.0;
-            if (!n10.getText().isEmpty()) {
-                c10 = Double.parseDouble(n10.getText());
-                c10 *= 10;
-            }
-
-            double c5 = 0.0;
-            if (!n5.getText().isEmpty()) {
-                c5 = Double.parseDouble(n5.getText());
-                c5 *= 5;
-            }
-
-            double c2 = 0.0;
-            if (!n2.getText().isEmpty()) {
-                c2 = Double.parseDouble(n2.getText());
-                c2 *= 2;
-            }
-
-            double c1 = 0.0;
-            if (!n1.getText().isEmpty()) {
-                c1 = Double.parseDouble(n1.getText());
-                c1 *= 1;
-            }
-
-            double c050 = 0.0;
-            if (!n050.getText().isEmpty()) {
-                c050 = Double.parseDouble(n050.getText());
-                c050 *= 0.50;
-            }
-
-            double c025 = 0.0;
-            if (!n025.getText().isEmpty()) {
-                c025 = Double.parseDouble(n025.getText());
-                c025 *= 0.25;
-            }
-
-            double c010 = 0.0;
-            if (!n010.getText().isEmpty()) {
-                c010 = Double.parseDouble(n010.getText());
-                c010 *= 0.10;
-            }
-
-            double c005 = 0.0;
-            if (!n005.getText().isEmpty()) {
-                c005 = Double.parseDouble(n005.getText());
-                c005 *= 0.05;
-            }
-
-            double meio = 0.0;
-            if (!nMeio.getText().isEmpty()) {
-                meio = Double.parseDouble(nMeio.getText());
-            }
-
-            DecimalFormat decimalFormat = new DecimalFormat("R$ 0.00");
-
-            // Seu código para calcular os valores...
-            double total = c100 + c50 + c20 + c10 + c5 + c2 + c1 + c050 + c025 + c010 + c005 + meio;
-            txtTotal.setText(decimalFormat.format(total));
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, e);
-            JOptionPane.showMessageDialog(null, "não é permitido simbolos, numeros com virgula nem letras, somente números inteiro");
-
-        }
+        calcular();
         btnCalcular.requestFocus();
     }//GEN-LAST:event_n005ActionPerformed
+
+    private void n200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n200ActionPerformed
+        // TODO add your handling code here:
+        calcular();
+        n100.requestFocus();
+    }//GEN-LAST:event_n200ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCaixa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCaixa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCaixa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCaixa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new TelaLogin().setVisible(true);
-
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
@@ -1835,6 +798,7 @@ public class TelaCaixa extends JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1855,6 +819,7 @@ public class TelaCaixa extends JFrame {
     public javax.swing.JTextField n100;
     public javax.swing.JTextField n2;
     public javax.swing.JTextField n20;
+    public javax.swing.JTextField n200;
     public javax.swing.JTextField n5;
     public javax.swing.JTextField n50;
     public javax.swing.JTextField nMeio;
