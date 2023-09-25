@@ -1,6 +1,8 @@
 # Controle de Fluxo de Caixa
 
 ## Sistema com CRUD
+![Descrição do GIF](URL_do_GIF)
+
 
 Bem-vindo ao nosso sistema de Controle de Fluxo de Caixa! Este sistema foi projetado para ajudar a gerenciar as finanças da sua empresa de forma eficiente. Com uma série de recursos e funcionalidades, simplificamos o processo de registro, acompanhamento e análise das transações financeiras.
 
