@@ -1,8 +1,36 @@
+<style>
+  h1 {
+    color: #4CAF50; /* Verde */
+    font-size: 32px;
+  }
+  
+  h2 {
+    color: #2196F3; /* Azul */
+    font-size: 28px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  ul {
+    font-size: 18px;
+    list-style-type: disc;
+    margin-left: 30px;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+</style>
+
 # Controle de Fluxo de Caixa
 
 ## Sistema com CRUD
-![Visão do projeto](https://github.com/carlosdesenvolvedor/controlecaixa/blob/main/Contagem%20caixa/src/img/github.gif)
 
+![Visão do Projeto](https://github.com/carlosdesenvolvedor/controlecaixa/blob/main/Contagem%20caixa/src/img/github%20(1).gif)
 
 Bem-vindo ao nosso sistema de Controle de Fluxo de Caixa! Este sistema foi projetado para ajudar a gerenciar as finanças da sua empresa de forma eficiente. Com uma série de recursos e funcionalidades, simplificamos o processo de registro, acompanhamento e análise das transações financeiras.
 
