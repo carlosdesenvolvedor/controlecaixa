@@ -14,6 +14,12 @@ Bem-vindo ao nosso sistema de Controle de Fluxo de Caixa! Este sistema foi proje
 
 - **CRUD (Create, Read, Update, Delete):** Realize operações de criação, leitura, atualização e exclusão de registros financeiros de forma fácil e intuitiva.
 
+- **Entrada e Retirada de Valores:** Registre tanto entradas quanto retiradas de valores no sistema, mantendo um registro preciso de todas as transações.
+
+- **Contagem de Notas e Moedas:** O sistema conta automaticamente a quantidade de notas e moedas de cada valor, facilitando a gestão do caixa.
+
+- **Saldo Disponível em Caixa:** Tenha acesso rápido ao saldo disponível em caixa, atualizado em tempo real.
+
 - **Relatórios Financeiros:** Gere relatórios detalhados para análise financeira, incluindo balanços, demonstrações de resultados e muito mais.
 
 Este sistema é uma ferramenta poderosa para auxiliar na gestão financeira da sua empresa. Fique no controle, tome decisões informadas e garanta o sucesso do seu negócio.
