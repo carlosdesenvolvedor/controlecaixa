@@ -9,7 +9,7 @@
 ### Principais Recursos:
 
 - **Cadastro de Funcionário:** Registre e gerencie informações sobre seus funcionários, incluindo detalhes pessoais e informações de contato.
-
+ ![Tela de Login](https://github.com/carlosdesenvolvedor/controlecaixa/blob/main/Contagem%20caixa/src/TelaCadastroUsuario.png)
 - **Entrada com Login:** Acesso seguro com autenticação de login para garantir a privacidade e a segurança das informações financeiras.
   ![Tela de Login](https://github.com/carlosdesenvolvedor/controlecaixa/blob/main/Contagem%20caixa/src/telaLogin.png)
 
@@ -18,8 +18,11 @@
 - **CRUD (Create, Read, Update, Delete):** Realize operações de criação, leitura, atualização e exclusão de registros financeiros de forma fácil e intuitiva.
 
 - **Entrada e Retirada de Valores:** Registre tanto entradas quanto retiradas de valores no sistema, mantendo um registro preciso de todas as transações.
+    ![Tela de Login](https://github.com/carlosdesenvolvedor/controlecaixa/blob/main/Contagem%20caixa/src/TelaEntradaRealizada.png)
 
 - **Contagem de Notas e Moedas:** O sistema conta automaticamente a quantidade de notas e moedas de cada valor, facilitando a gestão do caixa.
+  ![Tela de Login](https://github.com/carlosdesenvolvedor/controlecaixa/blob/main/Contagem%20caixa/src/TelaCaixa.png)
+   ![Tela de Login](https://github.com/carlosdesenvolvedor/controlecaixa/blob/main/Contagem%20caixa/src/TelaRetiradaRealizada.png)
 
 - **Saldo Disponível em Caixa:** Tenha acesso rápido ao saldo disponível em caixa, atualizado em tempo real.
 
