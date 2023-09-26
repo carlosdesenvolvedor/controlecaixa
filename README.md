@@ -11,6 +11,7 @@
 - **Cadastro de Funcionário:** Registre e gerencie informações sobre seus funcionários, incluindo detalhes pessoais e informações de contato.
 
 - **Entrada com Login:** Acesso seguro com autenticação de login para garantir a privacidade e a segurança das informações financeiras.
+- ![Visão do Projeto](https://github.com/carlosdesenvolvedor/controlecaixa/blob/main/Contagem%20caixa/src/telaLogin.png)
 
 - **Liberação de Permissões:** Controle as permissões de acesso para garantir que os funcionários tenham acesso apenas às informações necessárias para suas responsabilidades.
 
